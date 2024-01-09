@@ -16,4 +16,4 @@ const Home = () => {
       </View>
    )
 }
-export default Header;
+export default Home;
