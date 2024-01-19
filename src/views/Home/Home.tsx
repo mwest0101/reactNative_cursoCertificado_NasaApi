@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import Header from '../../components/Header';
 import TodaysImage from '../../components/TodaysImage';
+import LastFiveDaysImages from '../../components/LastFiveDaysImages';
 import {PostImage} from '../../types';
 import fetchApi from '../../utils/fetch';
 
@@ -10,6 +11,7 @@ import {format, sub} from 'date-fns';
 
 const Home = () => {
   const [todaysImage, setTodaysImage] = useState<PostImage>({});
+  const [lastFiveDaysImage, setLastFiveDaysImage] = useState<PostImage[]>([]);
 
   useEffect(() => {
     const loadTodaysImage = async () => {
@@ -47,6 +49,8 @@ const Home = () => {
     <View style={styles.container}>
       <Header />
       <TodaysImage {...todaysImage} />
+      <LastFiveDaysImages />
+      {/* <LastFiveDaysImagesResponse {...lastFiveDaysImagesResponse} /> */}
       {/* <Text>{todaysImage}</Text> */}
     </View>
   );
