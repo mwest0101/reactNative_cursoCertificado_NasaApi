@@ -8,7 +8,7 @@ export default async (urlParams?: string) => {
             ? urlParams 
             : ''}`
         
-        console.log("urlToRequest: "+urlToRequest);
+        console.log("urlToRequest: "+urlToRequest+"\n");
 
         const response= await fetch(
             `${API_URL}?api_key=${API_KEY}${
@@ -16,8 +16,13 @@ export default async (urlParams?: string) => {
                 ? urlParams 
                 : ''}`,
         );
-
+        
         const data = await response.json();
+
+        console.log("Response: ");
+        console.log(data);
+        console.log("\n");
+
         return Promise.resolve(data);
     }catch(error){
         return Promise.reject(error);

@@ -5,7 +5,7 @@ import Home from './src/views/Home';
 /*
 Tiempo de video realizado
 /*
-3:10:42
+3:28:42
 
 */
 function App(): React.JSX.Element {

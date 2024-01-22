@@ -11,7 +11,7 @@ import {format, sub} from 'date-fns';
 
 const Home = () => {
   const [todaysImage, setTodaysImage] = useState<PostImage>({});
-  const [lastFiveDaysImage, setLastFiveDaysImage] = useState<PostImage[]>([]);
+  const [lastFiveDaysImages, setLastFiveDaysImages] = useState<PostImage[]>([]);
 
   useEffect(() => {
     const loadTodaysImage = async () => {
@@ -33,9 +33,10 @@ const Home = () => {
           `&start_date=${fiveDaysAgoDate}&end_date=${todaysDate}`,
         );
 
-        console.log("todaysDate: "+todaysDate, "fiveDaysAgoDate: "+fiveDaysAgoDate);
-        console.log("lastFiveDaysImagesResponse: ");
-        console.log(lastFiveDaysImagesResponse);
+        //console.log("todaysDate: "+todaysDate, "fiveDaysAgoDate: "+fiveDaysAgoDate);
+        //console.log("lastFiveDaysImagesResponse: ");
+        //console.log(lastFiveDaysImagesResponse);
+        setLastFiveDaysImages(lastFiveDaysImagesResponse);
       } catch (error) {
         console.log(error);
       }
@@ -43,13 +44,13 @@ const Home = () => {
     loadTodaysImage().catch(null);
     loadLast5DaysImages().catch(null);
   }, []);
-  console.log(todaysImage);
+  //console.log(todaysImage);
 
   return (
     <View style={styles.container}>
       <Header />
       <TodaysImage {...todaysImage} />
-      <LastFiveDaysImages />
+      <LastFiveDaysImages postImages={lastFiveDaysImages} />
       {/* <LastFiveDaysImagesResponse {...lastFiveDaysImagesResponse} /> */}
       {/* <Text>{todaysImage}</Text> */}
     </View>
