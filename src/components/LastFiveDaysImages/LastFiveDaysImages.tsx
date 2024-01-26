@@ -4,7 +4,7 @@ import { PostImage as PostImageTypes } from "../../types";
 import PostImage from "../PostImage";
 
 const LastFiveDaysImages: FC<{ postImages ?: PostImageTypes[]}> = ({ 
-  postImages=[], 
+  postImages, 
 }) => {
 
     return (    
