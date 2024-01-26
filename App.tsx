@@ -1,17 +1,17 @@
 import React from 'react';
 import {SafeAreaView,StyleSheet} from 'react-native';
-import Home from './src/views/Home';
-
+// import Home from './src/views/Home';
+import Routes from './src/Routes';
 /*
 Tiempo de video realizado
 /*
-3:35:10
+3:47:10
 
 */
 function App(): React.JSX.Element {
   return (
     <SafeAreaView style={styles.container}>
-     <Home />
+     <Routes />
     </SafeAreaView>
   );
 }

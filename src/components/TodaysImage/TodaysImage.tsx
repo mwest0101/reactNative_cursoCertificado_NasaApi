@@ -5,7 +5,7 @@ import { PostImage } from "../../types";
 const TodaysImage: FC<PostImage> = ({date,title,url}) => {
     return (
     <View style={styles.container}>
-        <View style={styles.imagecontainer}>
+        <View style={styles.imageContainer}>
             
             <Image source={{uri:url}} style={styles.image} />
         </View>
