@@ -19,9 +19,9 @@ export default async (urlParams?: string) => {
         
         const data = await response.json();
 
-        console.log("Response: ");
-        console.log(data);
-        console.log("\n");
+        // console.log("Response: ");
+        // console.log(data);
+        // console.log("\n");
 
         return Promise.resolve(data);
     }catch(error){

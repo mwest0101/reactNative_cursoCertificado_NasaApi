@@ -38,6 +38,7 @@ const Home = () => {
         //console.log(lastFiveDaysImagesResponse);
         setLastFiveDaysImages(lastFiveDaysImagesResponse);
       } catch (error) {
+        setLastFiveDaysImages([]);
         console.log(error);
       }
     };
@@ -59,6 +60,7 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'rgba(7,26,93,255)',
     paddingHorizontal: 16,
   },
 });
