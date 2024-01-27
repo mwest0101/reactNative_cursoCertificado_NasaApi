@@ -14,6 +14,7 @@ const TodaysImage: FC<PostImage> = ({date, title, url,explanation}) => {
   const handleViewPress = () => {
     navigate('Detail', {title, date, url, explanation});
   };
+  
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
